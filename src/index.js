@@ -15,6 +15,8 @@ if (process.env.NODE_ENV !== "production") {
     reducers,
     composeEnhancer(applyMiddleware(logger, ReduxPromise))
   );
+} else {
+  store = createStore(reducers, applyMiddleware(logger, ReduxPromise));
 }
 
 ReactDOM.render(
